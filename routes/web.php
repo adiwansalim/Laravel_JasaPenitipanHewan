@@ -26,14 +26,14 @@ Route::post('/insertdata', [PenggunaController::class, 'insertdata'])->name('ins
 Route::get('/ubahpengguna/{id_pengguna}', [PenggunaController::class, 'ubahpengguna'])->name('ubahpengguna');
 Route::post('/updatedata/{id_pengguna}', [PenggunaController::class, 'updatedata'])->name('updatedata');
 Route::get('/deletepengguna/{id_pengguna}', [PenggunaController::class, 'deletepengguna'])->name('deletepengguna');
-
+Route::get('/eksporpengguna', [PenggunaController::class, 'eksporpengguna'])->name('eksporpengguna');
 Route::get('/hewan', [HewanController::class, 'index'])->name('hewan');
 Route::get('/tambahhewan', [HewanController::class, 'tambahhewan'])->name('tambahhewan');
 Route::post('/insertdata1', [HewanController::class, 'insertdata1'])->name('insertdata1');
 Route::get('/ubahhewan/{id_hewan}', [HewanController::class, 'ubahhewan'])->name('ubahhewan');
 Route::post('/updatedata1/{id_hewan}', [HewanController::class, 'updatedata1'])->name('updatedata1');
 Route::get('/deletehewan/{id_hewan}', [HewanController::class, 'deletehewan'])->name('deletehewan');
-
+Route::get('/eksporhewan', [HewanController::class, 'eksporhewan'])->name('eksporhewan');
 
 Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
 Route::get('/tambahtransaksi', [TransaksiController::class, 'tambahtransaksi'])->name('tambahtransaksi');
@@ -41,3 +41,4 @@ Route::post('/insertdata2', [TransaksiController::class, 'insertdata2'])->name('
 Route::get('/ubahtransaksi/{id_transaksi}', [TransaksiController::class, 'ubahtransaksi'])->name('ubahtransaksi');
 Route::post('/updatedata2/{id_transaksi}', [TransaksiController::class, 'updatedata2'])->name('updatedata2');
 Route::get('/deletetransaksi/{id_transaksi}', [TransaksiController::class, 'deletetransaksi'])->name('deletetransaksi');
+Route::get('/eksportransaksi', [TransaksiController::class, 'eksportransaksi'])->name('eksportransaksi');

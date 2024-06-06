@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Hewan;
 use Illuminate\Http\Request;
-
+use PDF;
 class HewanController extends Controller
 {
     public function index()
@@ -64,6 +64,15 @@ class HewanController extends Controller
 
     	// mengirim data pasien ke view index
     	return redirect()->route('hewan');
+
+    }
+    public function eksporhewan()
+    {
+    	// mengambil data dari table pembayaran
+        $hewan=Hewan::all();
+        view()->share('hewan',$hewan);
+        $pdf = PDF::loadview('layout/datahewan-pdf');
+        return $pdf->download('hewan.pdf');
 
     }
 }

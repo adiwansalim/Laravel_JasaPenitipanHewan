@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Transaksi;
 use App\Models\Hewan;
 use Illuminate\Http\Request;
-
+use PDF;
 class TransaksiController extends Controller
 {
     public function index()
@@ -71,4 +71,12 @@ class TransaksiController extends Controller
     	return redirect()->route('transaksi');
 
     }
+
+    public function eksportransaksi()
+    {
+    $transaksi = Transaksi::with('Pengguna')->get();
+    view()->share('transaksi',$transaksi);
+    $pdf = PDF::loadview('layout/datatransaksi-pdf');
+    return $pdf->download('transaksi.pdf');
+}
 }

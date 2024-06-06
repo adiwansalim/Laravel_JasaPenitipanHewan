@@ -60,7 +60,9 @@
             </div>
         </nav>
         <div class="home-content">
-            <h3>Data Pengguna</h3>
+            <h3>Data Pengguna</h3><br>
+             <a target="_blank"
+        href="eksporpengguna" class="btn btn-primary"><i class="bi bi-printer">Cetak Data</i></a>
             <div class="form-login">
  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>

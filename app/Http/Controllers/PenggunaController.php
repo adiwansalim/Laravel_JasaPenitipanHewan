@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Pengguna;
 use Illuminate\Http\Request;
-
+use PDF;
 class PenggunaController extends Controller
 {
     public function index()
@@ -64,6 +64,16 @@ class PenggunaController extends Controller
 
     	// mengirim data pasien ke view index
     	return redirect()->route('pengguna');
+
+    }
+
+    public function eksporpengguna()
+    {
+    	// mengambil data dari table pembayaran
+        $pengguna=Pengguna::all();
+        view()->share('pengguna',$pengguna);
+        $pdf = PDF::loadview('layout/datapengguna-pdf');
+        return $pdf->download('pengguna.pdf');
 
     }
 }

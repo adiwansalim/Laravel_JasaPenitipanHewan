@@ -63,6 +63,8 @@
             <h3>Data Hewan</h3><br>
             <a target="_blank"
         href="tambahhewan" class="btn btn-primary">Add Data</a>
+         <a target="_blank"
+        href="eksporhewan" class="btn btn-primary"><i class="bi bi-printer">Cetak Data</i></a>
             <div class="form-login">
  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
